@@ -1,13 +1,14 @@
-name: schedule job
+name: Scheduled Job  # Name of the workflow
 
 on:
   schedule:
+    # Runs every day at 00:00 UTC (10:00 AM Sydney time)
     - cron: "0 0 * * *"
-    
-jobs:
-   run-script:
-     runs-on: ubuntu-latest
 
-     steps:
-       - name: print massage
-         run: echo "schedule workflow"
+jobs:
+  run-script:  # Job ID
+    runs-on: ubuntu-latest  # Uses latest Ubuntu runner
+
+    steps:
+      - name: Print message  # Step name
+        run: echo "Scheduled workflow running!"  # Command to execute
